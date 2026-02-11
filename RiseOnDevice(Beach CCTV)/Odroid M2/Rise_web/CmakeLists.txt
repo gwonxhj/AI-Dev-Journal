@@ -1,0 +1,29 @@
+cmake_minimum_required(VERSION 3.10)
+project(rise_web_server CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(OpenCV REQUIRED)
+
+set(RKNN_INCLUDE_DIR "$ENV{HOME}/rise/include")
+set(RKNN_LIB_DIR     "$ENV{HOME}/rise/lib")
+
+include_directories(
+  ${OpenCV_INCLUDE_DIRS}
+  ${RKNN_INCLUDE_DIR}
+  ${CMAKE_SOURCE_DIR}/third_party
+  ${CMAKE_SOURCE_DIR}/src
+)
+
+link_directories(${RKNN_LIB_DIR})
+
+add_executable(app_server
+  src/app_server.cpp
+)
+
+target_link_libraries(app_server
+  ${OpenCV_LIBS}
+  rknnrt
+  pthread
+)
