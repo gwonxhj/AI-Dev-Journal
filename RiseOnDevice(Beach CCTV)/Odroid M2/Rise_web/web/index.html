@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>RKNN Stream Monitor</title>
+  <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Odroid M2 RKNN Monitor</h1>
+      <div id="status" class="status">loading...</div>
+    </header>
+
+    <main class="grid">
+      <section class="panel">
+        <h2>Settings</h2>
+
+        <label>Backend</label>
+        <select id="backend">
+          <option value="fp16">FP16</option>
+          <option value="int8">Hybrid INT8</option>
+        </select>
+
+        <label>Model size</label>
+        <select id="size">
+          <option value="n">YOLOv8n</option>
+          <option value="s">YOLOv8s</option>
+          <option value="m">YOLOv8m</option>
+          <option value="l">YOLOv8l</option>
+        </select>
+
+        <label class="row">
+          <input type="checkbox" id="rgb"/>
+          <span>RGB input</span>
+        </label>
+
+        <label>Conf</label>
+        <input id="conf" type="range" min="0.05" max="0.90" step="0.01"/>
+        <div class="hint" id="confv"></div>
+
+        <label>NMS</label>
+        <input id="nms" type="range" min="0.10" max="0.80" step="0.01"/>
+        <div class="hint" id="nmsv"></div>
+
+        <label>Video</label>
+        <select id="video"></select>
+
+        <label>JPEG Quality</label>
+        <input id="jpgq" type="range" min="40" max="95" step="1"/>
+        <div class="hint" id="jpgqv"></div>
+
+        <button id="apply">Apply</button>
+      </section>
+
+      <section class="viewer">
+        <img id="stream" src="/stream.mjpg" alt="stream"/>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
