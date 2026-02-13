@@ -4,7 +4,7 @@ AI 기반 영상처리 · 임베디드 시스템 · 경량화 추론 개발자 �
 ---
 
 ## 저의 경험에 관한 내용입니다
-- Jetson Orin Nano / Jetson AGX Orin / Odroid M1 / RaspberryPi 등 임베디드 환경에서
+- Jetson Orin Nano / Jetson AGX Orin / Odroid M1, M2 / RaspberryPi 등 임베디드 환경에서
   **실시간 추론 시스템 개발** 경험 보유  
 - YOLO 계열 모델을 이용한 **객체 탐지 · Landing Marker Detection and Landing Control · Behaviour Detection** 구현  
 - TensorRT, RKNN Toolkit, ONNX 기반 **모델 경량화 및 FPS 최적화** 경험
@@ -23,7 +23,7 @@ AI 기반 영상처리 · 임베디드 시스템 · 경량화 추론 개발자 �
 
 ### 🔹 Embedded / System
 - Jetson Orin Nano, AGX Orin
-- Odroid M1(Python + C++ 추론 모두 경험)
+- Odroid M1, M2(Python + C++ 추론 모두 경험)
 - Raspberry Pi Zero 2 W, Raspberry Pi 5
 - Arduino Nano/Mega, ATmega128
 - 멀티스레드 기반 실시간 영상 + AI 파이프라인 구성
