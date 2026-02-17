@@ -77,8 +77,9 @@ Edge 환경에서 AI 추론 성능을 분석하고 최적화하는 시스템 지
 	•	Multi-thread 추론 파이프라인 구성
 
 **📊 Performance Result**
-| :---: | :---: | :---: |
+
 | **Precision** | **Latency (ms)** | **FPS** |
+| :---: | :---: | :---: |
 | **FP32** | 42ms | 23 |
 | **FP16** | 29ms |	34 |
 | **Hybrid INT8** |	21ms | 46 |
