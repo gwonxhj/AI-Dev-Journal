@@ -1,76 +1,128 @@
-# 안녕하세요, 저는 권혁준(Hyeokjun Kwon)입니다
-AI 기반 영상처리 · 임베디드 시스템 · 경량화 추론 개발자 지망생
+좋다.
+지금부터는 “평균형 AI 프로젝트 학생” → “Edge AI Inference Optimization Engineer” 로 완전히 리브랜딩한다.
 
----
+아래는 완성형 README 초안이다.
+(수치는 예시이니 실제 벤치마크 값으로 반드시 교체해라.)
 
-## 저의 경험에 관한 내용입니다
-- Jetson Orin Nano / Jetson AGX Orin / Odroid M1, M2 / RaspberryPi 등 임베디드 환경에서
-  **실시간 추론 시스템 개발** 경험 보유  
-- YOLO 계열 모델을 이용한 **객체 탐지 · Landing Marker Detection and Landing Control · Behaviour Detection** 구현  
-- TensorRT, RKNN Toolkit, ONNX 기반 **모델 경량화 및 FPS 최적화** 경험
-- Arduino / ATmega128 / 센서 기반의 **하드웨어 제어 및 MCU 프로젝트 경험**  
+⸻
 
----
+권혁준 | Edge AI Inference Optimization Engineer
 
-## 사용해 본 기술 목록입니다
+Edge 환경에서 AI 추론 성능을 분석하고 최적화하는 시스템 지향 개발자입니다.
+모델 정확도 유지와 동시에 Latency 감소, 병목 분석, 멀티스레드 파이프라인 설계에 집중하고 있습니다.
 
-### 🔹 AI / Computer Vision
-- YOLOv8/v5, TensorRT(onnx→engine), TensorRT Lite, RKNN Toolkit, ONNX, VLM
-- OpenCV, Real-time Inference Pipeline
-- 데이터셋 생성/라벨링/훈련, 지표 계산(mAP, F1, FPS)
-- 모델 경량화(Quantization), 옵티마이징
-- FFmpeg 기반 영상 디코딩(RTSP/MP4)
+⸻
 
-### 🔹 Embedded / System
-- Jetson Orin Nano, AGX Orin
-- Odroid M1, M2(Python + C++ 추론 모두 경험)
-- Raspberry Pi Zero 2 W, Raspberry Pi 5
-- Arduino Nano/Mega, ATmega128
-- 멀티스레드 기반 실시간 영상 + AI 파이프라인 구성
-- Linux(Ubuntu 20.04/22.04), Shell Script, 시스템 튜닝
+🚀 Performance Highlights
+	•	YOLOv8 FP32 → Hybrid INT8 적용 후 Latency 42ms → 21ms (약 50% 개선)
+	•	RK3588 NPU 환경에서 INT8 양자화 시 출력 텐서 붕괴 문제 분석 및 Hybrid 설계
+	•	Multi-thread Producer–Consumer 구조 적용 후 FPS 28 → 46 향상
+	•	Preprocess / Inference / Postprocess 단계별 Latency Breakdown 분석
+	•	NPU–CPU Fallback 조건 분석 및 병목 제거 경험
 
-### 🔹 Communication / Backend
-- MQTT Publisher/Subscriber
-- JSON 기반 검출 결과 연동
-- Serial/UART, Bluetooth(HC-05/06)
+⸻
 
-### 🔹 Programming
-- Python / C / C++
-- Linux Shell Script
-- ROS(기초)
+🎯 Core Focus
+	•	Edge AI Inference Optimization
+	•	Quantization Strategy (FP32 / FP16 / INT8 / Hybrid)
+	•	Multi-threaded Real-time Pipeline
+	•	NPU / GPU 기반 추론 성능 분석
+	•	System-Level Bottleneck Debugging
 
----
+⸻
 
-## 주요 프로젝트입니다
+🧠 Technical Experience
 
-### 1) ** Fire Detection Self-Driving Drone (Jetson Orin Nano + YOLOv8)**
-실시간 화재 감지 + 마커 착륙 + 자율 비행 드론 시스템  
-[→ 프로젝트 보러가기](./fire-detection-drone)
+🔹 Inference Optimization
+	•	YOLOv8 모델 ONNX 변환 및 TensorRT / RKNN 엔진 빌드
+	•	FP16 vs INT8 vs Hybrid INT8 성능 비교 실험
+	•	RKNN Toolkit 기반 레이어 단위 Hybrid Quantization 설계
+	•	INT8 양자화 시 출력 텐서 붕괴 문제 디버깅 및 정확도 복구
+	•	Latency Breakdown 도구 구현 (Stage별 측정)
+	•	CPU affinity, Thread 분리, Queue 구조 개선 실험
 
----
+⸻
 
-### 2) ** Beach CCTV AI (Odroid M1 + RKNN + Person Detection / Jetson AGX, Orin Nano + Engine + Person Detection)**
-해변 돌발행동 감지용 실시간 NPU 추론 시스템  
-[→ 프로젝트 보러가기](./beach-cctv-ai)
+🔹 Embedded / Edge Platforms
+	•	Jetson Orin Nano / AGX Orin (TensorRT 기반 실시간 추론)
+	•	Odroid M1 / M2 (RK3588S NPU 기반 Hybrid INT8 추론)
+	•	Raspberry Pi 5 / Zero 2W
+	•	Ubuntu 20.04 / 22.04 기반 시스템 튜닝
 
----
+⸻
 
-### 3) ** Gesture Motion RC Car (Arduino + Gyro + HC-05)**
-장갑의 자이로 센서로 RC카를 조종하는 제스처 기반 차량  
-[→ 프로젝트 보러가기](./gesture-rc-car)
+🔹 System Architecture
+	•	Multi-thread Producer–Consumer 파이프라인 구현
+	•	Video Decode → Preprocess → Inference → Postprocess 분리 구조
+	•	Memory Reuse 전략 적용
+	•	RTSP/MP4 기반 FFmpeg 영상 디코딩 파이프라인 구축
 
----
+⸻
 
-### 4) **⚙ Embedded Mini Projects (ATmega128)**
-계산기, 시계, 모터 제어, 인터럽트 기반 기능 등  
-[→ 프로젝트 보러가기](./embedded-mini-projects)
+🔹 Programming
+	•	C++ (멀티스레드 기반 추론 파이프라인)
+	•	Python (모델 변환 및 실험 자동화)
+	•	C (MCU 기반 제어)
+	•	Shell Script (환경 자동화)
 
----
+⸻
 
-## Contact
-- Email: ksjm0417@naver.com
+📂 Projects
 
-## Reference
-- 운전 면허 2종 보통
-- 군필
-- MS Office 사용 가능
+⸻
+
+1️⃣ Beach CCTV AI — Edge NPU Inference Optimization
+
+Odroid M2 (RK3588S) + YOLOv8 + RKNN Toolkit
+
+실시간 돌발행동 감지를 위한 Edge NPU 기반 추론 시스템 최적화 프로젝트.
+
+🔥 Optimization Work
+	•	YOLOv8 ONNX → RKNN 변환
+	•	FP16 / INT8 / Hybrid INT8 성능 비교
+	•	INT8 적용 시 출력 텐서 붕괴 현상 분석
+	•	레이어 단위 Hybrid INT8 설계
+	•	Multi-thread 추론 파이프라인 구성
+
+📊 Performance Result
+
+Precision	Latency (ms)	FPS
+FP32	|| 42ms ||	23
+FP16	29ms	34
+Hybrid INT8	21ms	46
+
+정확도 유지 + 약 50% Latency 개선
+
+→ 프로젝트 보러가기￼
+
+⸻
+
+2️⃣ Fire Detection Self-Driving Drone
+
+Jetson Orin Nano + YOLOv8 + TensorRT
+
+화재 탐지 및 마커 기반 착륙 자율 비행 시스템.
+
+System Engineering Focus
+	•	TensorRT 기반 FP16 엔진 최적화
+	•	실시간 영상 스트림 기반 추론 파이프라인 설계
+	•	AI 추론 결과와 비행 제어 시스템 연동
+
+→ 프로젝트 보러가기￼
+
+⸻
+
+3️⃣ Gesture Motion RC Car
+
+센서 기반 실시간 제어 시스템 구현 (Arduino + MPU-6050)
+
+→ 프로젝트 보러가기￼
+
+⸻
+
+📫 Contact
+
+Email: ksjm0417@naver.com
+
+
+👉 Beach CCTV 프로젝트 README를 면접 킬러 수준으로 만들어줄까?
